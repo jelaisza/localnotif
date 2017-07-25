@@ -1,0 +1,74 @@
+<style>
+.laman{
+background-color:#F8F8F8;
+
+}
+.title{
+color:#fff;
+
+}
+</style>
+
+
+<ion-view view-title="Add Grocery Items">
+  <ion-content>
+
+<div class="laman">
+
+<br>
+
+    <div class="container" ng-controller="DisplayList">
+
+<center>
+      <h3 class="counter"><b>{{left()}}</b> remaining of <b>{{lists.length}}</b></h3>
+    </center>
+
+      <br>
+
+      <form class="container1">
+
+	  <div class="list list-inset">
+  <label class="item item-input">
+    <input type="text" placeholder="Insert Items"  ng-model="addedTask" class="text">
+  </label>
+<br>
+<center>
+<button class="button button-light" ng-click="add()" style="border-radius:50px; width:150px;"color: #fff; background-color:#2AD17D;border-color: #2AD17D;"">
+Add Items
+</button>
+</center>
+
+
+
+
+</form>
+<br>
+<br>
+<div class="card list">
+  <div class="item item-divider">Grocery List</div>
+  <div class="item item-text-wrap">
+<div class="sample" data-ng-repeat="list in lists track by $index">
+
+    <ion>
+
+  <ion-checkbox ng-model="list.done" >{{list.text}}</ion-checkbox>
+  <span class="done-{{list.done}}"></span>
+        <hr style="opacity: 0.2">
+</ion>
+</div>
+
+</div>
+</div>
+
+<center>
+<button class="button button-light" ng-click="remove()" style="border-radius:50px; width:150px; width:150px; color: #fff; background-color:#2AD17D;">
+Remove
+</button>
+</center>
+</div>
+
+<br>
+
+    </div>
+  </ion-content>
+</ion-view>

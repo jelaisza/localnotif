@@ -1,0 +1,27 @@
+<ion-view view-title="Search">
+  <ion-content class="padding">
+    <label class="item item-input">
+      <i class="icon ion-ios-search placeholder-icon"></i>
+      <input type="text" placeholder="Search Music" ng-model="search">
+    </label>
+    <div class="list">
+      <div class="item item-icon-right" ng-repeat="item in items | filter: search">
+        {{item}}<i class="icon ion-ios-more"></i>
+      </div>
+    </div>
+    
+    <center><button class="button button-assertive icon icon-right ion-ios-pause"></button>
+    <button class="button button-balanced icon icon-right ion-ios-play"></button></center>
+    <button class="button button-energized icon icon-left ion-search">Search</button>
+    <button class="button button-balanced icon icon-left ion-home">Home</button>
+    <button class="button button-assertive icon icon-left ion-location">Location</button>
+    <button class="button button-positive icon icon-left ion-locked">Lock</button>
+    
+    <div class="button-bar">
+      <a class="button button-positive">1</a>
+      <a class="button button-assertive">2</a>
+      <a class="button button-energized">3</a>
+      <a class="button">4</a>
+    </div>
+  </ion-content>
+</ion-view>

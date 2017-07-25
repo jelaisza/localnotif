@@ -1,0 +1,68 @@
+<style>
+.laman{
+background-color:#F8F8F8;
+
+}
+.title{
+color:#fff;
+
+}
+</style>
+
+
+
+<ion-view view-title="To Do's">
+  <ion-content>
+  
+  <div class="laman">
+
+
+    <div class="container">
+                <div class="content" ng-controller="taskController">
+
+
+                <form>
+
+                  <div class="list list-inset">
+                <label class="item item-input">
+                  <input type="text" id="description"  class="taskName" placeholder="What do you need to do?"  ng-model="newTask" class="text">
+                </label>
+
+<br>
+
+
+                <label class="item item-input">
+          <span class="input-label">Due Dates</span>
+          <input type="date"  id="dueDate" ng-model="newTaskDate">
+        </label>
+	<center><p><br>	
+	<button class="button button-light" ng-click="addNew()" style=" width:150px;"color: #fff; background-color:#13E39A;border-color: #2AD17D;"">
+Add Task
+</button>
+
+	<button class="button button-light" ng-click="deleteTask()" style=" width:150px;"color: #fff; background-color:#2AD17D;border-color: #2AD17D;"">
+Add Task
+</button>
+</center>
+
+
+							  
+
+                          </form>
+						  
+						  
+                          <ul  class="taskList">
+                              <li class="taskItem" ng-repeat="taskItem in taskItem track by $index" ng-model="taskItem"><input type="checkbox" class="taskCheckbox" ng-model="taskItem.complete" ng-change="save()">
+                                  <span class="complete-{{taskItem.complete}}">{{taskItem.description}}</span>
+                                  <span class="category-{{taskItem.category}}">{{taskItem.category}}</span>
+                                  <strong class="taskDate complete-{{taskItem.complete}}"><i class="fa fa-calendar"></i>{{taskItem.date | date : 'mediumDate'}}</strong>
+                              </li>
+                          </ul><!-- taskList -->
+                          </div><!-- content -->
+               </div><!-- container -->
+			   
+			   </div>
+			   
+			   </div>
+  </ion-content>
+</ion-view>

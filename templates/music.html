@@ -1,0 +1,24 @@
+<ion-view view-title="Music">
+  <ion-content>
+    <div class="container" ng-controller="TodoController">
+      <form data-ng-submit="addMusic()" class="todo-form">
+        <input type="text" ng-model="musicTitle" placeholder="Enter new music item"/>
+        <br>
+        <input type="submit" value="Add Music" class="button button-calm button-small button-block"/>
+      </form>
+      <section class="app-body">
+        <div class="card list">
+          <div class="item item-divider">Music</div>
+          <div class="item item-text-wrap">
+            <div class="list" data-ng-repeat="music in musics track by $index">
+              <div class="item item-icon-right">
+                <span>{{music.title}}</span>
+                <a class="button button-icon icon ion-android-delete"data-ng-click="remove($index)"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </ion-content>
+</ion-view>
